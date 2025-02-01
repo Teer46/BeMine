@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Valentines</title>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="./style.css" />
+		<style>
+			/* Add some basic styling for the buttons */
+			.btn {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-top: 20px;
+			}
+
+			.btn a {
+				padding: 10px 20px;
+				margin: 10px;
+				font-size: 20px;
+				text-decoration: none;
+				background-color: #ff6f61;
+				color: white;
+				border-radius: 5px;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				transition: all 0.2s ease-in-out;
+			}
+
+			/* Style for the moving 'No' button */
+			#no-button {
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="tenor-gif-embed" data-postid="23317332" data-share-method="host" data-aspect-ratio="0.8" data-width="100%">
+				<a href="https://tenor.com/view/cats-fighting-fighting-cats-anniehasleftoop-gif-23317332">Cats Fighting Fighting Cats GIF</a> from <a href="https://tenor.com/search/cats+fighting-gifs">Cats Fighting GIFs</a>
+			</div>
+			<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+			<h1>THAT'S IT! YOU'RE DONE</h1>
+			<p>Good luck pressing no, you dingleberry!</p>
+
+			<div class="btn">
+				<a href="yes.html">Yes</a>
+				<a href="javascript:void(0);" id="no-button">No</a>
+			</div>
+		</div>
+
+		<script>
+			// Select the 'No' button
+			const noButton = document.getElementById('no-button');
+
+			// Function to move the button to a random position within the visible area
+			function moveButton() {
+				// Get the width and height of the viewport
+				const viewportWidth = window.innerWidth;
+				const viewportHeight = window.innerHeight;
+
+				// Get the width and height of the 'No' button
+				const buttonWidth = noButton.offsetWidth;
+				const buttonHeight = noButton.offsetHeight;
+
+				// Generate random x and y positions that ensure the button stays within the viewport
+				const randomX = Math.floor(Math.random() * (viewportWidth - buttonWidth));
+				const randomY = Math.floor(Math.random() * (viewportHeight - buttonHeight));
+
+				// Set the new position of the button
+				noButton.style.position = 'absolute';
+				noButton.style.left = randomX + 'px';
+				noButton.style.top = randomY + 'px';
+			}
+
+			// Add event listener to move the button when clicked
+			noButton.addEventListener('click', moveButton);
+		</script>
+	</body>
+</html>
